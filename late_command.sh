@@ -21,6 +21,9 @@ sed "s/quiet splash//" /etc/default/grub > /tmp/grub
 sed "s/GRUB_TIMEOUT=[0-9]/GRUB_TIMEOUT=1/" /tmp/grub > /etc/default/grub
 update-grub
 
+# We add the virtualbox guest DKMS
+apt-get install virtualbox-guest-dkms -y
+
 # clean up
 apt-get autoremove --yes
 apt-get clean
